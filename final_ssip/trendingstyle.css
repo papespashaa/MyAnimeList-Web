@@ -1,0 +1,339 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+  color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #161616;
+    margin: 0;
+}
+.btn{
+  position: absolute;
+  top: 15px;
+  left:45px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background: #1b1b1b;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+.btn.click{
+  left: 260px;
+}
+.btn span{
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+}
+.btn.click span:before{
+  content: '\f00d';
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: #1b1b1b;
+  transition: left 0.4s ease;
+  z-index: 100;
+}
+.sidebar.show{
+  left: 0px
+}
+.sidebar .text{
+  color: #EEEDE7;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1.5px;
+}
+nav ul.main{
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+nav ul li{
+  line-height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+nav ul li.active a{
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+nav ul li a:hover{
+  color: cyan!important;
+  background: #1e1e1e!important;
+}
+nav ul .boku-show{
+  position: static;
+  display: none;
+}
+nav ul.boku-show.show{
+  display: block;
+}
+nav ul ul li{
+  line-height: 42px;
+  border-bottom: none;
+}
+nav ul ul li a{
+  font-size: 17px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+nav ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+nav ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.logo{
+  font-size: 80px;
+}
+
+.lg{
+  position: absolute;
+  border: 2px solid rgb(255, 255, 255);
+  border-bottom: none;
+  padding: 10px 400px 0 400px;
+  font-family: sans-serif ;
+  margin: 0 -33px 0;
+  font-size: 150px;
+  color: transparent;
+  margin-top: 150px;
+  -webkit-text-stroke: 2px white;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  background-position: 0 0;
+  animation: back 20s linear infinite;
+  /* animation: glow 5s linear infinite; */ 
+  
+  text-shadow: 0 20px 100px #eff2f3,
+  0 0 20px #f5f5f5,
+  0 0 40px #ffffff,
+  0 0 80px #ffffff,
+  0 0 160px #ffffff;
+
+}
+
+@keyframes back{
+  100%{
+      background-position: 2000px 0;
+  }
+}
+
+.container {
+  margin-top: 600px;
+  position: relative;
+  display: flex;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,transparent, #0004) ;
+}
+
+.container .box {
+  position: relative;
+  width:320px;
+  height: 400px;
+  margin: 0 20px;
+  border-radius: 0 20px;
+  background: linear-gradient(45deg, #56b3ff 25%,#444 25%, #444 50%,#56b3ff 50%, #56b3ff 75%, #444 75%, #444 100% );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBg 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container .box:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.container .box:nth-child(2)
+{
+  background: linear-gradient(135deg, #ffb53f 25%,#444 25%, #444 50%,#ffb53f 50%, #ffb53f 75%, #444 75%, #444 100% ); 
+  background-size: 40px 40px;
+  
+}
+
+@keyframes animateBg
+{
+  0%
+  {
+      background-position: 0;
+  }
+  100%
+  {
+      background-position: 40px;
+  }
+}
+
+.container .box img{
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+}
+
+.container .box:hover img{
+  height: 480px;
+}
+
+.border-bb #pp{
+  display: flex;
+  margin-top: 50px;
+  margin-left: 400px;
+  text-align: justify;
+  width: 50%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.border-bb #p{
+  display: flex;
+  margin-top: -400px;
+  margin-left: 400px;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  font-size: 3em;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  line-height: 1.0em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+    {
+      color: #0e2d42;  
+      text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+    {
+        color: #fff;  
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+  background: #1e1e1e3c;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 50px;
+    font-size: 22px;
+    border-bottom: 3px solid #ffffff;
+    color: cyan;
+}
+.trending {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-direction: row; */
+}
+
+.item {
+  /* border-style: hidden; */
+  /* border: 50px solid red;
+    border-radius: 15px; */
+    /* display: inline-block; */
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+}
+
+.poster {
+  width: 100%;
+  height: 320px;
+}
+
+img{
+    width: 210px;
+    height: 325px;
+}
+img.corners {
+    border-radius: 15px;
+}
+
+.nimpage {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+table {
+    padding-top: 15px;
+}
+
+.borderClass.leftside {
+    padding: 20px;
+}
+
+.add {
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #03bcf4;
+    padding: 5px;
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+ul.desc {
+    padding-left: 0px;
+    text-align: left;
+    margin-right: 0; 
+    padding-right: 0;
+    border-bottom: 1px solid white;
+}
+ul.desc > li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+h4 {
+    font-size:20px;
+    border-bottom: 1px solid #ffffff;
+}
+h3 {
+    font-size:30px;
+    border-bottom: 1px solid #ffffff;
+}

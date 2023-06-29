@@ -1,0 +1,465 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+  color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #161616;
+    margin: 0;
+}
+.btn{
+  position: absolute;
+  top: 15px;
+  left:45px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background: #1b1b1b;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+.btn.click{
+  left: 260px;
+}
+.btn span{
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+}
+.btn.click span:before{
+  content: '\f00d';
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: #1b1b1b;
+  transition: left 0.4s ease;
+  z-index: 100;
+}
+.sidebar.show{
+  left: 0px
+}
+.sidebar .text{
+  color: #EEEDE7;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: #1e1e1e;
+  letter-spacing: 1.5px;
+}
+nav ul.main{
+  background: #1b1b1b;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+nav ul li{
+  line-height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+nav ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+nav ul li.active a{
+  color: cyan;
+  background: #1e1e1e;
+  border-left-color: cyan;
+}
+nav ul li a:hover{
+  color: cyan!important;
+  background: #1e1e1e!important;
+}
+nav ul .boku-show{
+  position: static;
+  display: none;
+}
+nav ul.boku-show.show{
+  display: block;
+}
+nav ul ul li{
+  line-height: 42px;
+  border-bottom: none;
+}
+nav ul ul li a{
+  font-size: 17px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+nav ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+nav ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.logo{
+  font-size: 80px;
+}
+
+.lg{
+  position: absolute;
+  border: 2px solid rgb(255, 255, 255);
+  border-bottom: none;
+  padding: 10px 400px 0 400px;
+  font-family: sans-serif ;
+  margin: 0 -33px 0;
+  font-size: 150px;
+  color: transparent;
+  margin-top: 150px;
+  -webkit-text-stroke: 2px white;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+  background-position: 0 0;
+  animation: back 20s linear infinite;
+  /* animation: glow 5s linear infinite; */ 
+  
+  text-shadow: 0 20px 100px #eff2f3,
+  0 0 20px #f5f5f5,
+  0 0 40px #ffffff,
+  0 0 80px #ffffff,
+  0 0 160px #ffffff;
+
+}
+@keyframes back{
+  100%{
+      background-position: 2000px 0;
+  }
+}
+
+.container {
+  margin-top: 600px;
+  position: relative;
+  display: flex;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,transparent, #0004) ;
+}
+
+.container .box {
+  position: relative;
+  width:320px;
+  height: 400px;
+  margin: 0 20px;
+  border-radius: 0 20px;
+  background: linear-gradient(45deg, #56b3ff 25%,#444 25%, #444 50%,#56b3ff 50%, #56b3ff 75%, #444 75%, #444 100% );
+  background-size: 40px 40px;
+  filter: grayscale(1);
+  animation: animateBg 0.5s linear infinite;
+  animation-play-state: paused;
+  transition: filter 1s;
+  display: flex;
+  justify-content: center;
+
+}
+
+.container .box:hover {
+  animation-play-state: running;
+  filter: grayscale(0);
+}
+
+.container .box:nth-child(2)
+{
+  background: linear-gradient(135deg, #ffb53f 25%,#444 25%, #444 50%,#ffb53f 50%, #ffb53f 75%, #444 75%, #444 100% ); 
+  background-size: 40px 40px;
+  
+}
+
+@keyframes animateBg
+{
+  0%
+  {
+      background-position: 0;
+  }
+  100%
+  {
+      background-position: 40px;
+  }
+}
+
+.container .box img{
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  transition: height 0.5s;
+}
+
+.container .box:hover img{
+  height: 480px;
+}
+
+.border-bb #pp{
+  display: flex;
+  margin-top: 50px;
+  margin-left: 400px;
+  text-align: justify;
+  width: 50%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.border-bb #p{
+  display: flex;
+  margin-top: -400px;
+  margin-left: 400px;
+  font-weight: 800;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  font-size: 3em;
+  letter-spacing: 15px;
+  color: #0e3742;
+  text-transform: uppercase;
+  line-height: 1.0em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+    0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
+    {
+      color: #0e2d42;  
+      text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%
+    {
+        color: #fff;  
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4;
+    }
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+  background: #1e1e1e3c;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 50px;
+    font-size: 22px;
+    border-bottom: 3px solid #ffffff;
+    color: cyan;
+}
+.read .create-contact {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(0, 232, 232);
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 0;
+}
+.read .create-contact:hover {
+    background-color: rgb(3, 131, 131);
+}
+.read .pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+.read .pagination a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #a5a7a9;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 10px 15px;;
+    margin: 15px 0 15px 50px;
+}
+.read .pagination a:hover {
+    background-color: #999b9d;
+}
+.read table {
+    width: 100%;
+    padding-top: 30px;
+    border-collapse: collapse;
+}
+.read table thead {
+    background-color: cyan;
+    border-bottom: 1px solid #d3dae0;
+}
+.read table thead td {
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+.read table tbody tr{
+  background-color: #ffffff;
+}
+.read table tbody tr {
+    border-bottom: 1px solid #d3dae0;
+}
+.read table tbody td{
+  color: #1e1e1e;
+}
+.read table tbody td:hover{
+  color: #ffffff;
+}
+.read table tbody tr:hover {
+    background-color: #1e1e1e;
+}
+.read table tbody tr:hover td {
+    color: #FFFFFF;
+}
+.read table tbody tr:hover td:nth-child(1) {
+    color: #FFFFFF;
+}
+.read table tbody tr td {
+    padding: 10px;
+}
+.read table tbody tr td:nth-child(1) {
+    color: #a5a7a9;
+}
+.read table tbody tr td.actions {
+    padding: 8px;
+    text-align: right;
+}
+.read table tbody tr td.actions .edit, .read table tbody tr td.actions .trash {
+    display: inline-flex;
+    text-align: right;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 10px 12px;
+}
+.read table tbody tr td.actions .trash {
+    background-color: #b73737;
+}
+.read table tbody tr td.actions .trash:hover {
+    background-color: #a33131;
+}
+.read table tbody tr td.actions .edit {
+    background-color: #37afb7;
+}
+.read table tbody tr td.actions .edit:hover {
+    background-color: #319ca3;
+}
+.update form input[type="file"]{
+  color: #ffffff;
+  width: 400px;
+  margin-top: 50px;
+  margin-bottom: 250px;
+  margin-left: 275px;
+}
+.update form {
+    padding: 15px 20px;
+    display: flex;
+    flex-flow: wrap;
+}
+.update form label {
+    display: inline-flex;
+    width: 400px;
+    padding: 10px 0;
+    margin-right: 25px;
+}
+.update form input {
+  color: #161616;
+    padding: 10px;
+    width: 400px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+}
+.update form textarea{
+  color: #000000;
+}
+.update form input[type="submit"] {
+    display: block;
+    background-color: cyan;
+    border: 0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 200px;
+  margin-top: 15px;
+}
+.update form input[type="submit"]:hover {
+    background-color: rgb(0, 160, 160);
+}
+
+.delete .yesno {
+    display: flex;
+}
+.delete .yesno a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: cyan;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    margin: 15px 10px 15px 0;
+}
+.delete .yesno a:hover {
+    background-color: rgb(0, 160, 160);
+}
+.akhir{
+  margin-top: 500px;
+}
+
+.action_btn{
+  color: #000000;
+  text-decoration: none;
+}
+
+.add form {
+  padding: 15px 20px;
+  display: flex;
+  flex-flow: wrap;
+}
+.add form label {
+  display: inline-flex;
+  width: 400px;
+  padding: 10px 0;
+  margin-right: 25px;
+}
+.add form input {
+color: #161616;
+  padding: 10px;
+  width: 400px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+}
+.add form textarea{
+color: #000000;
+}
+.add form input[type="submit"] {
+  display: block;
+  background-color: cyan;
+  border: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 200px;
+margin-top: 15px;
+}
+.add form input[type="submit"]:hover {
+  background-color: rgb(0, 160, 160);
+}
+.add form input[type="file"]{
+  color: #ffffff;
+  width: 400px;
+}
